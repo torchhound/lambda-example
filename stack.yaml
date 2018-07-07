@@ -1,0 +1,7 @@
+resolver: lts-11.16
+
+packages:
+- .
+
+docker:
+  stack-exe: download
