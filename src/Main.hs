@@ -11,4 +11,4 @@ main = do
     Left err ->
       I.hPutStrLn I.stderr $ "Error while decoding JSON provided via stdin: " ++ err
     Right json ->
-      I.hPutStrLn I.stdout $ "JSON: " ++ json
+      putStrLn $ "JSON: " ++ json
