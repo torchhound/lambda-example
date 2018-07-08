@@ -28,6 +28,10 @@ exports.handler = function (event, context, callback) {
   const executable = './lambda-example';
   const main = spawn(executable, { stdio: ['pipe', process.stdout, process.stderr] });
 
+  main.on('message', function (data) {
+    console.log(data.toString());
+  });
+
   main.on('error', function (err) {
     console.error('error: ' + err);
     callback(err, err);

@@ -16,4 +16,4 @@ According to [this stack issue](https://github.com/commercialhaskell/stack/issue
 
 `zip -j lambda-example.zip src/index.js .stack-work/install/x86_64-linux-dkda49f7ca9b244180d3cfb1987cbc9743/lts-11.16/8.2.2/bin/lambda-example`
 
-Create Lambda function with correct Node runtime and IAM role. Upload zip, save, and test!
+Create Lambda function with correct Node runtime and IAM role. Upload zip and save. Then add an API Gateway trigger and create an API Gateway test event. Hit test and watch your JSON being displayed in your Cloudwatch logs!
