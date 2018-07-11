@@ -5,11 +5,7 @@ exports.handler = function (event, context, callback) {
   const executable = './lambda-example'
   const main = spawn(executable, { stdio: ['pipe', process.stdout, process.stderr] })
 
-  main.stdout.on('data', function (data) {
-    console.log(data)
-  })
-
-  main.stderr.on('data', function (err) {
+  main.on('error', function (err) {
     console.error('error: ' + err)
     callback(err, err)
   })
@@ -18,7 +14,7 @@ exports.handler = function (event, context, callback) {
     callback(null, {
       statusCode: 200,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ "ok": true, "description": "update has been processed" })
+      body: JSON.stringify({ "ok": true, "description": "S3 upload successful" })
     })
   })
 
